@@ -26,7 +26,7 @@ In the words of Abraham Lincoln:
 
 In the words of Abraham Lincoln:
 > Man, I love log cabins
-<br />
+
 
 ## Quoting code
 You can call out code or a command in a sentence with a single backtick.
@@ -59,7 +59,6 @@ git commit
 ```
 
 NOTE: Anything that is wrapped in backticks (\`) does not need an backslash (\) to escape markdown the markdown language. It is already escaped.
-<br />
 
 # Links
 
@@ -75,7 +74,7 @@ There are millions of homeless lions in Canada right now, see the full [story](h
 
 There are millions of homeless lions in Canada right now, see the full [story](https://fake-news.com)
 
-<br />
+
 ## Section links
 Directly link a section in a rendered file by hovering over the section heading to expose the link: (Its the two link chain icon). It should show the URL with the addition of `#styling-text` corresponding to the header that is being called. 
 
@@ -87,7 +86,7 @@ After you have the anchor link, you can make an interactive table of contents li
 
 Since github automatically resolves the relative path, it you can simply put the anchor to get your header.
 
-<br />
+
 ## Relative links
 Relative links and image paths can be defined in your rendered files to help readers navigate to other files in your repository.
 
@@ -102,7 +101,7 @@ If this looks familiar, its because this is the same format you would use for In
 Github will automatically transform your relative link or image path based on whatever branch you're currently on, so that the link or path always works. You can use relative link operands, such as `./` and `../`.
 
 Try not to use absolute links as these might mess up for those that clone your project. 
-<br />
+
 
 # Spacing
 
