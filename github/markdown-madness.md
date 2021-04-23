@@ -15,7 +15,7 @@ Markdown is the syntatic language that is present in all Github platforms used t
 
 # Styling text
 
-### Quoting text
+## Quoting text
 Use `>` to quote text
 
 Ex:
@@ -28,7 +28,7 @@ In the words of Abraham Lincoln:
 > Man, I love log cabins
 
 
-### Quoting code
+## Quoting code
 You can call out code or a command in a sentence with a single backtick.
 
 Ex:
@@ -63,7 +63,7 @@ NOTE: Anything that is wrapped in backticks (`) does not need an backslash (\) t
 
 # Links
 
-### Inline links
+## Inline links
 You can create inline links by wrapping text that you want displayed in brackets `[ ]` and wrapping the URL in parentheses immediately after `( )`.
 
 Supposedly you can use `command + k` as shortcut to create a link but I'm not sure how this works from writing in a text editor.
@@ -76,7 +76,7 @@ There are millions of homeless lions in Canada right now, see the full [story](h
 There are millions of homeless lions in Canada right now, see the full [story](https://fake-news.com)
 
 
-### Section links
+## Section links
 Directly link a section in a rendered file by hovering over the section heading to expose the link: (Its the two link chain icon). It should show the URL with the addition of `#styling-text` corresponding to the header that is being called. 
 
 After you have the anchor link, you can make an interactive table of contents like you would make most other links.
@@ -88,7 +88,7 @@ After you have the anchor link, you can make an interactive table of contents li
 Since github automatically resolves the relative path, it you can simply put the anchor to get your header.
 
 
-### Relative links
+## Relative links
 Relative links and image paths can be defined in your rendered files to help readers navigate to other files in your repository.
 
 For exaple, if you have a README file in the root of your repository, and you have another file in docs/CONTRIBUTING.md, the relative link to CONTRIBUTING.md in your README might look like this:
