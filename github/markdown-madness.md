@@ -58,7 +58,7 @@ git add
 git commit
 ```
 
-NOTE: Anything that is wrapped in backticks (`) does not need an backslash (\) to escape markdown the markdown language. It is already escaped.
+NOTE: Anything that is wrapped in backticks (\`) does not need an backslash (\) to escape markdown the markdown language. It is already escaped.
 
 <br />
 # Links
