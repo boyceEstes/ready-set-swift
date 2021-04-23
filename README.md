@@ -2,13 +2,19 @@
 
 The only documentation/guide for all development for Boyces BY Boyces. 
 
-This repository contains all chips of information I have been able to chisel from the mountain of knowledge that is software development. While there is no way that I could capture all of the knowledge that is available, this is my best effort to try.
+This repository contains all the fragments of information I have been able to chisel from the mountain of knowledge that is software development. While there is no way that I could capture all of the knowledge that is available, this is a good start.
 
 
 
 ## Github
-* [Markdown Madness](github/markdown-madness.md)
+* [Markdown madness](github/markdown-madness.md)
 
 
 ## SwiftUI
 * [Lists](swiftui/lists.md)
+
+
+## Core Data
+* [Subclassing NSManagedObject](core-data/subclassing-nsmanagedobject.md)
+* [Modeling data](core-data/modeling-data.md)
+* [Versioning and migration](core-data/versioning-and-migration.md)
