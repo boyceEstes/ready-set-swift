@@ -1,7 +1,12 @@
-Links to all headers in topic
-* Headers
-* Styling text
-* Links
+
+* Headers (tbd)
+* [Styling text](#styling-text)
+	* [Quoting text](#quoting-text)
+	* [Quoting code](#quoting-code)
+* [Links](#links)
+	* [Inline links](#inline-links)
+	* [Section links](#section-links)
+	* [Relative links](#relative-links)
 * Lists
 
 
@@ -16,18 +21,19 @@ Use `>` to quote text
 Ex:
 ```
 In the words of Abraham Lincoln:
-\> Man, I love log cabins
+> Man, I love log cabins
 ```
 
 In the words of Abraham Lincoln:
 > Man, I love log cabins
+
 
 ### Quoting code
 You can call out code or a command in a sentence with a single backtick.
 
 Ex:
 ```
-Use \`git status\` to list all new or modified files that haven't yet been committed.
+Use `git status` to list all new or modified files that haven't yet been committed.
 ```
 
 Use `git status` to list all new or modified files that haven't yet been committed.
@@ -38,11 +44,11 @@ To format code into distinct blocks, use triple backticks \```.
 Ex:
 ```
 Some basic Git commands are:
-\```
+```
 git status
 git add
 git commit
-\```
+```
 ```
 
 Some basic Git commands are:
@@ -52,10 +58,12 @@ git add
 git commit
 ```
 
+NOTE: Anything that is wrapped in backticks (`) does not need an backslash (\) to escape markdown the markdown language. It is already escaped.
+
 
 # Links
 
-###Inline links
+### Inline links
 You can create inline links by wrapping text that you want displayed in brackets `[ ]` and wrapping the URL in parentheses immediately after `( )`.
 
 Supposedly you can use `command + k` as shortcut to create a link but I'm not sure how this works from writing in a text editor.
@@ -65,9 +73,19 @@ Ex:
 There are millions of homeless lions in Canada right now, see the full [story](https://fake-news.com)
 ```
 
+There are millions of homeless lions in Canada right now, see the full [story](https://fake-news.com)
+
 
 ### Section links
-Directly link a section in a rendered file by hovering over the section heading to expose the link: (Its the two link chain icon)
+Directly link a section in a rendered file by hovering over the section heading to expose the link: (Its the two link chain icon). It should show the URL with the addition of `#styling-text` corresponding to the header that is being called. 
+
+After you have the anchor link, you can make an interactive table of contents like you would make most other links.
+
+```
+* [Styling Text](#styling-text)
+```
+
+Since github automatically resolves the relative path, it you can simply put the anchor to get your header.
 
 
 ### Relative links
