@@ -11,4 +11,4 @@ This repository contains all chips of information I have been able to chisel fro
 
 
 ## SwiftUI
-* [lists](swiftui/lists.md)
+* [Lists](swiftui/lists.md)
