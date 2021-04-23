@@ -39,16 +39,16 @@ Use `git status` to list all new or modified files that haven't yet been committ
 Use `git status` to list all new or modified files that haven't yet been committed.
 
 
-To format code into distinct blocks, use triple backticks \```.
+To format code into distinct blocks, use triple backticks \`\`\`.
 
 Ex:
 ```
 Some basic Git commands are:
-```
+\`\`\`
 git status
 git add
 git commit
-```
+\`\`\`
 ```
 
 Some basic Git commands are:
@@ -59,8 +59,8 @@ git commit
 ```
 
 NOTE: Anything that is wrapped in backticks (\`) does not need an backslash (\) to escape markdown the markdown language. It is already escaped.
-
 <br />
+
 # Links
 
 ## Inline links
