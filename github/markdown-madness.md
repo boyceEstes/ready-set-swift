@@ -106,7 +106,7 @@ Try not to use absolute links as these might mess up for those that clone your p
 # Spacing
 
 ## Linebreaks
-These are only possible (so far in my experiementation) by `<br />`.
+These are only possible (so far in my experiementation) by `<br />`. Even this is not a good solution as it messed up headers for some reason.
 
 Do not use the following when attempting to get more space between lines:
 * `  ` - two spaces
