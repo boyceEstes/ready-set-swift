@@ -12,6 +12,13 @@
 
 Markdown is the syntatic language that is present in all Github platforms used to beautify and style writings. It is called "Markdown" because they were feeling fun and wanted to play on the fact that this is a 'markup' language.
 
+Method one.  
+
+I left two spaces above<br /><br />
+
+I added `<br />` twice above\
+
+I added a backslash `\` above
 
 # Styling text
 
