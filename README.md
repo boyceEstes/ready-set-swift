@@ -6,6 +6,6 @@ This repository contains all chips of information I have been able to chisel fro
 
 
 
-## Github
-* [Markdown Madness](./github/markdown-madness)
+## Githubby
+* [Markdown Madness](githubby/markdown-madness)
 
