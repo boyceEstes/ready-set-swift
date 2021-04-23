@@ -7,18 +7,11 @@
 	* [Inline links](#inline-links)
 	* [Section links](#section-links)
 	* [Relative links](#relative-links)
-* Lists
-
+* Lists  (tbd)
+* [Spacing](#spacing)
 
 Markdown is the syntatic language that is present in all Github platforms used to beautify and style writings. It is called "Markdown" because they were feeling fun and wanted to play on the fact that this is a 'markup' language.
 
-Method one.  
-
-I left two spaces above<br /><br />
-
-I added `<br />` twice above\
-
-I added a backslash `\` above
 
 # Styling text
 
@@ -109,3 +102,14 @@ If this looks familiar, its because this is the same format you would use for In
 Github will automatically transform your relative link or image path based on whatever branch you're currently on, so that the link or path always works. You can use relative link operands, such as `./` and `../`.
 
 Try not to use absolute links as these might mess up for those that clone your project. 
+
+# Spacing
+Method one.  
+
+I left two spaces above [ ]<br /><br />
+
+I added `<br />` twice above [x]\
+
+I added a backslash `\` above [ ] &nbsp; &nbsp;
+
+I added `&nbsp;` twice above [ ]
