@@ -105,6 +105,21 @@ Try not to use absolute links as these might mess up for those that clone your p
   
   
 # Spacing
+* Create multiple lines that CAN be selected as text
+```
+<br />
+<br />
+
+```
+Do not forget the single line after! If you do not next header could be affected.
+Output:
+* Line 1
+<br />
+<br />
+
+* Line 2
+
+<br />
 
 ## Linebreaks
 These are only possible (so far in my experiementation) by `<br />`. Even this is not a good solution as it messed up headers for some reason.
