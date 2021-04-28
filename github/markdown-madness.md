@@ -1,6 +1,7 @@
 
 * Headers (tbd)
 * [Styling text](#styling-text)
+	* [Italics](#italics)
 	* [Quoting text](#quoting-text)
 	* [Quoting code](#quoting-code)
 * [Links](#links)
@@ -14,6 +15,30 @@ Markdown is the syntatic language that is present in all Github platforms used t
 
 
 # Styling text
+
+## Italics
+
+Ex:
+```
+This is *fancy* word.
+// Alternative:
+This is _fancy_ word.
+```
+Outputs:
+This is a *fancy* word.
+
+
+## Bold
+
+Ex:
+```
+This is a **significant** word.
+// Alternative:
+This is a __significant__ word.
+```
+Outputs:
+This is a **significant** word.
+
 
 ## Quoting text
 Use `>` to quote text
