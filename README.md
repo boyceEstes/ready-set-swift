@@ -15,7 +15,12 @@ This repository contains all the fragments of information I have been able to ch
 
 
 ## Core Data
+* [Basics](core-data/basics.md)
 * [Common errors](core-data/common-errors.md)
 * [Modeling data](core-data/modeling-data.md)
 * [Subclassing NSManagedObject](core-data/subclassing-nsmanagedobject.md)
 * [Versioning and migration](core-data/versioning-and-migration.md)
+
+
+## CocoaPods
+* [Basics](cocoapods/basics.md)

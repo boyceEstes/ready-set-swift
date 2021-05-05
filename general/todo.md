@@ -11,3 +11,7 @@
 * [Experiment with Core Data in packages](https://ishabazz.dev/blog/2020/7/5/using-core-data-with-swift-package-manager)
 
 * [Fastlane](https://www.raywenderlich.com/1259223-fastlane-for-ios/lessons/13)
+
+* [Continuous Integration](../continuous-integration/guide.md)
+
+* [Networking Service API](https://matteomanferdini.com/network-requests-rest-apis-ios-swift/)
