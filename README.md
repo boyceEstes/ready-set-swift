@@ -43,3 +43,9 @@ This repository contains all the fragments of information I have been able to ch
 
 ## SwiftUI
 * [Lists](swiftui/lists.md)
+
+## Testing
+* [Basics](testing/basics.md)
+* [Common errors](testing/common-errors.md)
+* [Optionals](testing/optionals.md)
+* [Parallelizing and randomizing](testing/parallelizing-and-randomizing.md)
