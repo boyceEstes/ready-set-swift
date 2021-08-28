@@ -6,13 +6,6 @@ This repository contains all the fragments of information I have been able to ch
 
 
 
-## Github
-* [Markdown madness](github/markdown-madness.md)
-
-
-## SwiftUI
-* [Lists](swiftui/lists.md)
-
 
 ## Core Data
 * [Basics](core-data/basics.md)
@@ -24,3 +17,23 @@ This repository contains all the fragments of information I have been able to ch
 
 ## CocoaPods
 * [Basics](cocoapods/basics.md)
+
+
+## General
+* [Crashing fundamentals](general/crashing.md)
+* [Date](general/date.md)
+* [Information security](general/information-security.md)
+
+## Github
+* [Markdown madness](github/markdown-madness.md)
+
+
+## Swift Packages
+* [Create Swift Package](swift-packages/create-swift-package.md)
+* [Updating your package](swift-packages/updating-your-package.md)
+* [Use Swift Packages](swift-packages/use-swift-package.md)
+
+
+## SwiftUI
+* [Lists](swiftui/lists.md)
+

@@ -2,6 +2,7 @@
 
 * [Property cannot be marked @NSManaged because its type cannot be represented in Objective-C](#property-cannot-be-marked-nsmanaged-because-its-type-cannot-be-represented-in-objective-c)
 * [An NSManagedObject of class 'NSManagedObject' must have a valid NSEntityDescription](#an-nsmanagedobject-of-class-nsmanagedobject-must-have-a-valid-nsentitydescription)
+* [Resetting persistent store file location](#resetting-persistent-store-file-location)
 
 ## Property cannot be marked @NSManaged because its type cannot be represented in Objective-C
 
@@ -97,3 +98,9 @@ let name = StorageProvider.modelName
 persistentContainer = NSPersistentContainer(name: name, managedObjectModel: try! StorageProvider.model(name: name))
 ```
 * Clearly this is not the safest way to do this, meant to show the concept. These snippets can be cleaned up for sure.
+
+
+## Resetting persistent store file location
+This is something that came up while working on a problem in the Halo app. Certain entities in the project were returned to their default state for some reason when the app was updated. This also happened on login if the user force closed the app very quickly. 
+
+The problem ended up being that we had two different places that the .sqlite file could be getting saved to in the project. I'm not sure why ever happened, but the solution was simply making a single file location to store the .sqlite file.

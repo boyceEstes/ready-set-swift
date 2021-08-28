@@ -64,6 +64,8 @@ platform :ios, '9.0'
 	* This could have been easily avoided by simply commiting the `Podfile.lock`. A real shame to see.
 <br />
 
+
+
 ## Commands
 
 #### Pod install
@@ -74,6 +76,7 @@ platform :ios, '9.0'
 * This command will only resolve dependencies for pods not already listed in `Podfile.lock` so that no work is repeated.
 	* For pods listed in `Podfile.lock`, it downloads the explicit version listed in the lock file without trying to check if a newer version is available
 * The first time this command is used, it will create the `.xcworkspace`
+
 
 #### Pod outdated
 `pod outdated`
