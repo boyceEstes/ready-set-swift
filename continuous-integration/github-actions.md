@@ -1,5 +1,13 @@
 # Github Actions
+<!-- TOC -->
 
+- [Github Actions](#github-actions)
+	- [Glossary](#glossary)
+	- [Notes](#notes)
+	- [Get Started](#get-started)
+	- [Specific for testing a Swift package](#specific-for-testing-a-swift-package)
+
+<!-- /TOC -->
 ## Glossary
 * **Workflow**: configurable automated process made up of one or more jobs. Defined by YAML file.
 * **Job**: Set of steps that perform individual tasks and steps that can run commands or use an action.
@@ -33,7 +41,7 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
 ```
 
-3. After you submit some `actions.yml` file in `workflows` you can try to add it to the project. 
+3. After you submit some `actions.yml` file in `workflows` you can try to add it to the project.
 	1. Start Commit
 	2. Insert title
 	3. Select "Create a new branch for this commit and start a pull request"
@@ -41,10 +49,10 @@ jobs:
 	4. Finally select `Propose new file`
 	5. Create Pull Request
 
-* After the pull request has been made it will immediately start the validation process and you can see it in the PR. You can go to details to see the specific processes that are running, which are based on the commands specified in the YAML file. 
+* After the pull request has been made it will immediately start the validation process and you can see it in the PR. You can go to details to see the specific processes that are running, which are based on the commands specified in the YAML file.
 	* In this case we just spit out information related to our project and the build machine with `echo` statements.
 * You can view the Actions that were run (similar to how you would view validations in TeamCity) by navigating to the `Actions` tab.
-	* You can select each run that occurs by selecting the item in `All workflows`. 
+	* You can select each run that occurs by selecting the item in `All workflows`.
 	* After selecting a workflow, you can look at specific parts of the job including duration, billable time, the trigger, etc.
 	* When you click the job in `Jobs` on the left pane, you can see each detailed step in the process.
 
@@ -89,4 +97,32 @@ More experimentation will need to be done, but an easy way to create more fine-g
 ```
 - name: Run end-to-end tests
   run: swift test -v --filter NetworkMeAPIEndToEndTests
+```
+
+## Workflow status badge
+Whenever you have testing implemented with some CI, you can usually attach a pretty badge to show off your brilliant passing project.
+
+A status badge shows whether the workflow is currently failing or passing and usually goes on the project's `README.md` file.
+
+By default, the badge displays the status of your default branch, however this can be customized to show whatever branch or event you want by using parameters.
+
+General template:
+```
+![example workflow](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg)
+```
+### Exmaples
+Default:
+```
+![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+```
+
+Branch parameter:
+```
+![example branch parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?branch=feature-1)
+
+```
+
+Event parameter:
+```
+![example event parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?event=pull_request)
 ```
