@@ -6,8 +6,11 @@
 	- [Notes](#notes)
 	- [Get Started](#get-started)
 	- [Specific for testing a Swift package](#specific-for-testing-a-swift-package)
+	- [Workflow status badge](#workflow-status-badge)
+		- [Exmaples](#exmaples)
 
 <!-- /TOC -->
+
 ## Glossary
 * **Workflow**: configurable automated process made up of one or more jobs. Defined by YAML file.
 * **Job**: Set of steps that perform individual tasks and steps that can run commands or use an action.
