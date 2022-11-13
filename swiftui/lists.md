@@ -6,10 +6,10 @@
     * [Sections](#collapsible-sections)
 
 
-## Lists
+# Lists
 
 
-## ForEach
+# ForEach
 
 When you want to loop over a sequence to create views, theres a strong possibility you want to use `ForEach`. 
 
@@ -31,7 +31,7 @@ VStack(alignment: .leading) {
 [More info](https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-views-in-a-loop-using-foreach)
 
 
-## Sections
+# Sections
 You can create a section to denote areas in a list using the `Section` View.
 
 ```
@@ -44,10 +44,10 @@ List {
 }
 ```
 
-## Collapsible 
+# Collapsible 
 Since iOS 14 (Swift 2.0(ish)), there was introduced some new objects and parameters to create collapsible and expandable Lists.
 
-### Collapsible lists
+## Collapsible lists
 The simplest way is by creating a list using the new `children` constructor paramter. This parameter takes a keypath to a group of items that is the same format as the root. For instance, this is the example model used in WWDC '20.
 
 ```
@@ -72,8 +72,10 @@ struct Member: Identifiable {
 }
 ```
 
-### Collapsible Sections
+## Collapsible Sections
+Collapsable sections is actually the default behavior for lists as of iOS16.
 
+You can disable this behavior by setting the `listStyle` to `.insetGroup` or whatever floats your boat.
 
-### Sources:
+# Sources:
 * https://developer.apple.com/videos/play/wwdc2020/10031/
