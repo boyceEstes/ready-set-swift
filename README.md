@@ -7,50 +7,50 @@ This repository contains all the fragments of information I have been able to ch
 
 ## Continuous Integration
 - [GitHub Actions](continuous-integration/github-actions.md)
----
+
 ## CocoaPods
-* [Basics](cocoapods/basics.md)
+- [Basics](cocoapods/basics.md)
 
----
+
 ## Errors
-* [Core Data errors](/errors/core-data-errors.md)
+- [Core Data errors](/errors/core-data-errors.md)
 
----
+
 ## General
-* [Crashing fundamentals](general/crashing.md)
-* [Date](general/date.md)
+- [Crashing fundamentals](general/crashing.md)
+- [Date](general/date.md)
 
----
+
 ## Git
-* [Deleting branches](git/deleting-branch.md)
-* [Reset](git/reset)
-* [Stashing changes](git/stashing-changes.md)
+- [Deleting branches](git/deleting-branch.md)
+- [Reset](git/reset)
+- [Stashing changes](git/stashing-changes.md)
 
----
+
 ## Github
-* [Markdown madness](github/markdown-madness.md)
+- [Markdown madness](github/markdown-madness.md)
 
----
+
 ## Persistence
 
 
 ### Core Data
-* [Basics](core-data/basics.md)
-* [Generic Methods](/core-data/generic-methods.md)
-* [Subclassing NSManagedObject](core-data/subclassing-nsmanagedobject.md)
+- [Basics](core-data/basics.md)
+- [Generic Methods](/core-data/generic-methods.md)
+- [Subclassing NSManagedObject](core-data/subclassing-nsmanagedobject.md)
 
----
+
 
 ## Swift Packages
-* [Create Swift Package](swift-packages/create-swift-package.md)
-* [Use Swift Packages](swift-packages/use-swift-package.md)
----
+- [Create Swift Package](swift-packages/create-swift-package.md)
+- [Use Swift Packages](swift-packages/use-swift-package.md)
+
 
 ## SwiftUI
-* [Lists](swiftui/lists.md)
+- [Lists](swiftui/lists.md)
 
----
+
 ## Testing
-* [Basics](testing/basics.md)
-* [Optionals](testing/optionals.md)
-* [Fast and efficient test scheme](/testing/fast-and-effective-test-scheme.md)
+- [Basics](testing/basics.md)
+- [Optionals](testing/optionals.md)
+- [Fast and efficient test scheme](/testing/fast-and-effective-test-scheme.md)
