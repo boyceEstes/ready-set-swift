@@ -15,7 +15,7 @@ git reset --hard
 ```
 
 Undoing a Hard reset
-- Actually pretty easy, you just need to check out your reflog (dunno what this stands for)
+- Actually pretty easy, you just need to check out your reflog
 ```
 git reflog
 ```
@@ -31,20 +31,4 @@ You will see a list of the latest git actions. You can select where you want you
 git reset --hard f6e5064
 # Or
 git reset --hard HEAD@{1}
-```
-
-## Hello world
-Well damn, I don't think that I like this very much. Mostly because the preview.
-1. this
-2. That
-
-* Hello world
-- How are you
-  - This isn't funny any more try a different joke
-
-  This feels mad ghetto
-* I realluy love being able to see this in real time.
-
-```
-Anything else you want to say to me, git?
 ```
