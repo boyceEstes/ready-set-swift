@@ -32,6 +32,7 @@ This repository contains all the fragments of information I have been able to ch
 
 ### Core Data
 * [Basics](core-data/basics.md)
+* [Generic Methods](/core-data/generic-methods.md)
 * [Common errors](core-data/common-errors.md)
 * [Modeling data](core-data/modeling-data.md)
 * [Subclassing NSManagedObject](core-data/subclassing-nsmanagedobject.md)
