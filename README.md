@@ -1,9 +1,8 @@
-# Hello and welcome to *get-set-go*!
+# Hello and welcome to *ready-set-swift*!
 
-The only documentation/guide for all development for Boyces BY Boyces.
+Documentation/guide to things that I think is worth coming back to, or frequently search.
 
 This repository contains all the fragments of information I have been able to chisel from the mountain of knowledge that is software development. While there is no way that I could capture all of the knowledge that is available, this is a good start.
-
 
 
 
