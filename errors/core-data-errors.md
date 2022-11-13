@@ -1,10 +1,15 @@
-# Common errors
+# Core Data errors
+
+
+<!-- TOC -->
 
 * [Property cannot be marked @NSManaged because its type cannot be represented in Objective-C](#property-cannot-be-marked-nsmanaged-because-its-type-cannot-be-represented-in-objective-c)
 * [An NSManagedObject of class 'NSManagedObject' must have a valid NSEntityDescription](#an-nsmanagedobject-of-class-nsmanagedobject-must-have-a-valid-nsentitydescription)
 * [Resetting persistent store file location](#resetting-persistent-store-file-location)
 
-## Property cannot be marked @NSManaged because its type cannot be represented in Objective-C
+<!-- /TOC -->
+
+# Property cannot be marked @NSManaged because its type cannot be represented in Objective-C
 
 This is mentioned in [Creating NSManaged properties](./subclassing-nsmanagedobject.md#creating-nsmanaged-properties) but the reason this is happening is because `NSManagedObject` utilizes runtime features of Objective-C. This means that all the attributes of the subclass must be representable in Objective-C.
 
@@ -13,24 +18,23 @@ If you want an attribute Optional, you may ned to change the type from something
 `Set<GenericType>` values are still okay to use optionally.
 
 
-## An NSManagedObject of class 'NSManagedObject' must have a valid NSEntityDescription
-### First occurence
-**SOLVED**
-#### On: 
+# An NSManagedObject of class 'NSManagedObject' must have a valid NSEntityDescription
+## First occurence
+### On
 ```
 try mainContext.execute(batchInsert) // Specifically 'execute'
 ```
-#### Error:
+### Error
 ```
 "An NSManagedObject of class 'NSManagedObject' must have a valid NSEntityDescription."
 ```
-#### Solution:
+### Solution
 * Set the `Class Module`'s namespace in the Core Data Model editor to `Current Product Module`
 
-### Second occurence
-**SOLVED**
+---
+## Second occurence
 
-#### On:
+### On
 * Import the project source module using `@testable import CoreDataDemo1`
 * This happened specifically whenever trying to call the batch method. Other non-batch insert methods were made that performed fine without this error.
 ```
@@ -45,7 +49,7 @@ func test_parseAndSave_batchInsert_fastest() {
 }
 ```
 
-#### Error(s):
+### Error(s)
 ```
 warning: Multiple NSEntityDescriptions claim the NSManagedObject subclass 'CoreDataDemo1.Movie' so +entity is unable to disambiguate.
 
@@ -57,7 +61,7 @@ Failed to read dyld info for process 85766 (5)
 An NSManagedObject of class 'NSManagedObject' must have a valid NSEntityDescription. (NSInvalidArgumentException)
 ```
 
-#### Solution:
+### Solution
 The problem was that the the ManagedObjectModel was being loaded in multiple times. Once for the actual project StorageProvider, and then it was being loaded one more time for the Mock instance that we wanted to use.
 
 Normally I'm not sure that this would be a problem since it ran fine on the other non-batch Core Data interactions, but the compiler must be stricter with these statements. 
@@ -100,7 +104,7 @@ persistentContainer = NSPersistentContainer(name: name, managedObjectModel: try!
 * Clearly this is not the safest way to do this, meant to show the concept. These snippets can be cleaned up for sure.
 
 
-## Resetting persistent store file location
+# Resetting persistent store file location
 This is something that came up while working on a problem in the Halo app. Certain entities in the project were returned to their default state for some reason when the app was updated. This also happened on login if the user force closed the app very quickly. 
 
 The problem ended up being that we had two different places that the .sqlite file could be getting saved to in the project. I'm not sure why ever happened, but the solution was simply making a single file location to store the .sqlite file.
