@@ -1,8 +1,8 @@
-# Parallelizing and randomizing
+# Fast and Effective Test Scheme
 
 <!-- TOC -->
 
-- [Parallelizing and randomizing](#parallelizing-and-randomizing)
+- [Parallelizing and randomizing](#fast-and-effective-test-scheme)
   - [Parallelizing tests](#parallelizing-tests)
     - [Setup](#setup)
   - [Randomizing tests](#randomizing-tests)
@@ -12,7 +12,7 @@
 
 In unit testing, we want our tests to be fast and independent of any other anything else in the codebase. There are two main ways that we can do this.
 
-### Parallelizing tests
+# Parallelizing tests
 
 This is useful for running tests to speed up execution of the testing. It is not necessary whenever there are a relatively small number of unit tests, but if your project runs tests slowly this could be a good move to increase their speed.
 
@@ -26,7 +26,7 @@ This is useful for running tests to speed up execution of the testing. It is not
 
 
 
-### Randomizing tests
+# Randomizing tests
 When tests are randomized, they are run in a different sequence each time they run. This is perfect when trying to prevent tests from relying on something else outside of the test.
 
 For exmaple, if we have a singleton that is used in Test A and Test B which it is modified in test A, then Test B would be dependent on whatever Test A did. If Test A changed how it modified the singleton test B would be at risk of breaking.

@@ -53,4 +53,4 @@ This repository contains all the fragments of information I have been able to ch
 ## Testing
 * [Basics](testing/basics.md)
 * [Optionals](testing/optionals.md)
-* [Parallelizing and randomizing](testing/parallelizing-and-randomizing.md)
+* [Fast and efficient test scheme](/testing/fast-and-effective-test-scheme.md)
