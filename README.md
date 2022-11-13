@@ -43,7 +43,6 @@ This repository contains all the fragments of information I have been able to ch
 
 ## Swift Packages
 * [Create Swift Package](swift-packages/create-swift-package.md)
-* [Updating your package](swift-packages/updating-your-package.md)
 * [Use Swift Packages](swift-packages/use-swift-package.md)
 ---
 
