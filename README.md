@@ -6,8 +6,7 @@ This repository contains all the fragments of information I have been able to ch
 
 
 ## Continuous Integration
-* [GitHub Actions](github/github-actions.md)
-
+- [GitHub Actions](continuous-integration/github-actions.md)
 ---
 ## CocoaPods
 * [Basics](cocoapods/basics.md)
@@ -16,7 +15,6 @@ This repository contains all the fragments of information I have been able to ch
 ## General
 * [Crashing fundamentals](general/crashing.md)
 * [Date](general/date.md)
-* [Information security](general/information-security.md)
 
 ---
 ## Git
