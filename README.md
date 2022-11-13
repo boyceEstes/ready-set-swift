@@ -19,7 +19,6 @@ This repository contains all the fragments of information I have been able to ch
 ---
 ## Git
 * [Deleting branches](git/deleting-branch.md)
-* [Move subdirectories out](git/move-subdirectories.md)
 * [Reset](git/reset)
 * [Stashing changes](git/stashing-changes.md)
 
