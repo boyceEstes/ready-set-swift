@@ -4,14 +4,16 @@
 * [Initial Package contents](#initial-package-contents)
 * [Configure the Package](#configure-the-package)
 * [Add code](#add-code)
-	* [Modifying access level](#odifying-access-level)
+	* [Modifying access level](#modifying-access-level)
 * [Add a dependency on another Swift Package](#add-a-dependency-on-another-swift-package)
-* [Package resources](#accessing-your-resources)
+* [Package resources](#package-resources)
+    - [Including](#including)
+    - [Excluding](#excluding)
 * [Versioning](#versioning)
-* [Creating a tag](#creating-a-tag)
+    - [Creating a tag](#creating-a-tag)
 * [Sources](#sources)
 
-## Get started
+# Get started
 
 Create a Swift Package
 1. Open Xcode
@@ -24,7 +26,7 @@ Create a Swift Package
 
 
 
-## Initial Package contents
+# Initial Package contents
 * **README.md**: What your package does
 * **Package.swift** (*Package manifest*): Describes the configuration for the swift package. Uses Swift and PackageDescription framework to define:
 	* Package name,
@@ -38,7 +40,7 @@ Create a Swift Package
 
 
 
-## Configure the Package
+# Configure the Package
 Since there is no `.xcproject` or `.xcworkspace`, packages must rely on their folder structure and use the *package manifest* for addition configurations.
 
 Most of the important bits are set up by default to allow the Package to run. Useful things to know regarding the package manifest:
@@ -94,7 +96,7 @@ let package = Package(
 )
 ```
 
-### Specify platform and version
+## Specify platform and version
 In the example, we can see that they have a `platforms` section written out. This is not *necessary* for the package to become operation.
 
 If you do not include package, the default is the oldest supported version for all of the platforms (iOS, macOS, etc.)
@@ -113,10 +115,10 @@ macOS(.v11) - Big Sur (not yet supported in some places - looking at you Github 
 
 
 
-## Add code
+# Add code
 You would add source code the same way as any normal project. If you add a new file to the target subdirectory that you want, for example Add a Swift file to `Sources/CoreDataStorage`, it will be automatically included in your target.
 
-### Modifying access level
+## Modifying access level
 Whenever you separate your code into separate modules, you will need to take some extra measures to make sure that it can communicate with each individual module. 
 
 By default, Swift symbols are creating with an `internal` access level. This means that only other entities that are *internal* to the project can access the symbol. This goes for classes, structs, functions, variables, etc.
@@ -138,11 +140,10 @@ public class BigTimeRushWasLowKeyFire() {
 
 * **Note**: For structs you will need to explicitly write the initializer so that it can be public scoped. Gross.
 
-<br />
 
 
 
-## Add a dependency on another Swift Package
+# Add a dependency on another Swift Package
 Define this in the *package manifest*.
 
 There are two main ways to retrieve dependency packages:
@@ -162,20 +163,20 @@ dependencies: [
 
 
 
-## Distribute binaries as Swift Package
+# Distribute binaries as Swift Package
 Swift Packages do not have to provide the source code files. Instead, you can choose to distribute binaries. If you want to sell a closed-source library, for example, you could make it available as a binary.
 <br />
 
 
 
-## Package resources
+# Package resources
 To add asset files as package resources to your Swift project, **declare a Swift tools version of 5.3 or later in your manifest file**.
 
 For example, Swift packages can contain user interface comonents that use asset catalogs, storyboards, `.string` files, etc.
 
 [More info](https://developer.apple.com/documentation/swift_packages/bundling_resources_with_a_swift_package)
 
-### Including
+## Including
 You must explicitly declare or exclude some resources. When Xcode can't automatically handle resources, declare it as a resource in the *package manifest*. 
 
 Here is an example that assumes `text.txt` resides in your `Sources/CoreDataStorage` directory and you want to include it as a package resource. In `Package.swift`:
@@ -199,7 +200,7 @@ Two rules to determine how Xcode treats resources:
 	* Resource file should remain untouched or have a certain directory structure for resources.
 	* Use `copy(_:)` to apply this rule.
 
-### Excluding
+## Excluding
 If you do not want a resource to travel along with the package resources, you can make sure it doesn't by excluding it from a target.
 ```
 targets: [
@@ -216,7 +217,7 @@ targets: [
 
 
 
-## Versioning
+# Versioning
 When you are adding a Swift package to a project, you might notice the version specifier that you have to fill out. Well, where do you actually SET that when you're making the package?
 
 Great question, happy I asked. 
@@ -228,7 +229,7 @@ To version your package:
 Whenever your product is in alpha it might be a good idea to just keep this before version `1.0.0`. I'd say to start small with `0.0.1` and work you way up with each commit (Probably a good thing to have done automatically).
 
 
-### Creating a tag
+## Creating a tag
 This is pretty intuitive so don't freak out if you forget. 
 * Just navigate to the repository on [github](https://github.com)
 * On the right panel, *Releases*
@@ -236,9 +237,7 @@ This is pretty intuitive so don't freak out if you forget.
 * Choose your branch
 * Click the button to create the tag and it will create a tag for the last commit on that branch.
 
-<br />
 
-
-## Sources
+# Sources
 * [Apple documentation - Swift Package Manager](https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html)
 * [Apple documentation - creating a standalone swift package](https://developer.apple.com/documentation/xcode/creating_a_standalone_swift_package_with_xcode)
