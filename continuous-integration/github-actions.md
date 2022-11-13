@@ -8,42 +8,21 @@
 	- [Specific for testing a Swift package](#specific-for-testing-a-swift-package)
 	- [Workflow status badge](#workflow-status-badge)
 		- [Exmaples](#exmaples)
+  - [Sources](#sources)
 
 <!-- /TOC -->
 
-## Glossary
+# Glossary
 * **Workflow**: configurable automated process made up of one or more jobs. Defined by YAML file.
 * **Job**: Set of steps that perform individual tasks and steps that can run commands or use an action.
 
-## Notes
+# Notes
 * Workflows can be triggered from a pull request or push to a specific/any branch. It can also be triggered with tags, scheduled, and some other ways.
 
-## Get Started
+# Get Started
 1. Navigate to the repository's `Action` tab in Github.
 2. Setup workflow
 	* You should be editing a YAML file in the `/.github/workflows` directory.
-
-Example YAML file for us to use as content. This doesn't do anything other than interact with the build machine, but it demonstrates the basic format of an action file.
-```
-name: GitHub Actions Demo
-on: [push]
-jobs:
-  Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v2
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
-```
-
 3. After you submit some `actions.yml` file in `workflows` you can try to add it to the project.
 	1. Start Commit
 	2. Insert title
@@ -86,23 +65,45 @@ jobs:
 
 ```
 
-The magic is in the steps. Each `- name:` identifies a new command that you want the GitHub server to run. In this case we want to run two commands.
-
-The first command is named "Build". This is the name that will show up in the logs to let you know what area of the workflow steps you are in. `swift build -v`, which is specified following "run:" is actually the important part. It is the command that is performed. You can test this out yourself by running it in the terminal for your Swift package.
+1. **Name**: Each `- name:` identifies a new command that you want the GitHub server to run. In this case we want to run two commands.
+2. **Run**: The command that is performed by the step. This is analagous to the command that you can use in terminal
 
 The same rules apply for the second command "Run Tests". Its name is identified as "Run tests" and the command that we want the build machine to use is `swift test -v`.
 
-**NOTE**:
-It is important to remember that we are able to filter which tests that we want to perform using `--filter` on the command.
+**NOTE**: More experimentation will need to be done, but an easy way to create more fine-grained testing scenarios is to separate your tests into multiple test targets in your `Package.swift` file (assuming youre using GitHub actions on a swift package, of course). Then you can specify the test target you would like to run tests for, if you only wanted certain tests performed at a certain time.
 
-More experimentation will need to be done, but an easy way to create more fine-grained testing scenarios is to separate your tests into multiple test targets in your `Package.swift` file (assuming youre using GitHub actions on a swift package, of course). Then you can specify the test target you would like to run tests for, if you only wanted certain tests performed at a certain time.
+Example of a workflow action that would build some swift package for with the macOS, and then build and test for specific iOS device schemes
 
 ```
-- name: Run end-to-end tests
-  run: swift test -v --filter NetworkMeAPIEndToEndTests
-```
+jobs:
+  unit_tests:
+    runs-on: macos-latest
+    steps:
+    - name: Repository checkout
+      uses: actions/checkout@v2
 
-## Workflow status badge
+    - name: Lint
+      run: swiftlint
+
+    - name: Build for macOS
+      run: swift build -v
+
+    - name: Run macOS tests
+      run: swift test -v
+
+    - name: Build for iOS
+      run: set -o pipefail && env NSUnbufferedIO=YES xcodebuild build-for-testing -scheme IndexedDataStore -destination "platform=iOS Simulator,OS=latest,name=iPhone 12" | xcpretty
+
+    - name: Run iOS tests
+      run: set -o pipefail && env NSUnbufferedIO=YES xcodebuild test-without-building -scheme IndexedDataStore -destination "platform=iOS Simulator,OS=latest,name=iPhone 12" | xcpretty
+```
+This allows us to have more control whenever we are creating a CI pipeline because we can have certain schemes test certain test targets. 
+
+For instance, we might not always want to run tests on the End-to-End API tests or fully integrated Cache tests since they are more time intensive. 
+
+But we might want to run it before we merge to the main branch
+
+# Workflow status badge
 Whenever you have testing implemented with some CI, you can usually attach a pretty badge to show off your brilliant passing project.
 
 A status badge shows whether the workflow is currently failing or passing and usually goes on the project's `README.md` file.
@@ -113,7 +114,7 @@ General template:
 ```
 ![example workflow](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg)
 ```
-### Exmaples
+## Exmaples
 Default:
 ```
 ![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
@@ -129,3 +130,6 @@ Event parameter:
 ```
 ![example event parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?event=pull_request)
 ```
+
+# Sources
+- [Running tests in Swift package with GitHub actions – Augmented Code](https://augmentedcode.io/2021/04/26/running-tests-in-swift-package-with-github-actions/)
